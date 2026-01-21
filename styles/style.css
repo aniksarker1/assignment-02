@@ -39,8 +39,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px; /* ডানে-বামে একটু স্পেস */
-    background-color: #160a29; /* আপনার থিম কালার */
+    padding: 20px 40px; 
+    background-color: #160a29;
     position: relative;
 }
 
@@ -358,6 +358,10 @@ nav {
     color: white;
 }
 
+.feature-card:hover {
+    transform: translateY(-3px);
+}
+
 .section-title {
     text-align: center;
     font-style: Bold;
@@ -382,8 +386,7 @@ nav {
     border-radius: 20px;
     overflow: hidden;
     width: 380px;
-    transition: 0.3s ease;
-    
+    transition: 0.3s ease;   
 }
 
 .iframe-container {
@@ -581,58 +584,127 @@ nav {
     line-height: 24px;
 }
 
+.hide {
+    display: none !important;
+}
+
 
 @media screen and (max-width: 576px) {
+ 
+ #menu-toggle, .hamburger {
+    display: none;
+} 
     
-    .navbar {
-        padding: 16px 20px;
+.navbar {
+        padding: 15px 20px;
+        position: relative; 
+        background-color: #160a29;
+        z-index: 1000;
     }
 
-
-    .hamburger {
-        display: block; /* মোবাইলে আইকন দেখা যাবে */
+.hamburger {
+        display: block;
         cursor: pointer;
     }
 
-    .hamburger img {
-        width: 24px; 
-        filter: invert(1); /* আইকন সাদা করার জন্য */
-    }
-
-
-    .btn-subscribe {
-        display: none; 
-    }
-
-   
-    .nav-links {
-        display: none; 
-        position: absolute;
-        top: 100%; 
-        left: 0;
-        width: 100%;
-        background-color: #25143d; 
-        flex-direction: column; 
-        align-items: center;
-        padding: 20px 0;
-        border-top: 1px solid rgba(255,255,255,0.1);
-        z-index: 100;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-    }
-
-    .nav-links li {
-        margin: 15px 0;
+.nav-links {
+        display: none;
+        
+   }        
+.nav-links li {
         width: 100%;
         text-align: center;
-    }
-    
-    .nav-links li a {
-        display: block;
-        width: 100%;
+        margin: 15px 0;
     }
 
-    /* #menu-toggle:checked ~ .nav-links {
-        display: flex; 
+.nav-links li a {
+        display: block;
+        width: 100%;
+        font-size: 18px;
+}
+
+#menu-toggle:checked ~ .nav-links {
+        display: flex;
+}
+
+.btn-subscribe {
+        display: none; 
+}
+
+.banner-section {
+    text-align: center;
+    padding: 80px 0;
+    background-image: url(../assets/hero-bg.png);
+    background-size: cover;
+    background-position: center;
+}
+
+
+ .about-heading {
+    font-weight: 400px;
+    font-size: 38px;
+    color: white;
+    margin-bottom: 20px;
+}   
+
+.number-box-area {
+   display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 180px);
+   gap: 30px;
+}
+.container {
+    padding: 0px 30px;
+    padding-top: 40px;
+    width: 95%;
+}
+
+
+.section-title {
+  font-size: 35px;
+  width: 100%;  
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 380px);
+    gap: 20px;
+    grid-template-rows: min-content min-content min-content;
+    max-width: 100%;
+    margin:0 auto;
+}
+
+.featured-section {
+   gap: 20px;
+}
+
+.host-card {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.footer-links {
+     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 100px);
+    gap: 5px;
+    margin-bottom: 40px;
+}
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
     }
-} */
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+}
+}
+.hero-mic-img {
+    animation: float 4s ease-in-out infinite;
 }
