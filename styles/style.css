@@ -35,6 +35,15 @@ nav {
     
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px; /* ডানে-বামে একটু স্পেস */
+    background-color: #160a29; /* আপনার থিম কালার */
+    position: relative;
+}
+
 .logo {
     font-size: 28px;
     font-weight: 700;
@@ -52,18 +61,24 @@ nav {
 }
 
 
-.menu {
+.nav-links {
   display: flex;
   gap: 32px;
   list-style: none;
   align-items: center;
 }
 
-.menu li a {
+.nav-links li a {
     color: white;
     font-size: 16px;
     font-weight: 400;
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: white;
+    transform: translateY(-3px);
 }
 
 .btn-subscribe {
@@ -78,7 +93,20 @@ nav {
     display: inline-flex;
     align-items: center;
     gap: 4px;
+    transition: all 0.3s ease;
+}
 
+.btn-subscribe:hover {
+    transform: translateY(-3px);
+}
+
+.arrow img {
+    width: 16px; 
+    align-items: center;
+}
+
+.hamburger, #menu-toggle {
+    display: none; 
 }
 
 .banner-section {
@@ -157,6 +185,11 @@ nav {
     display: flex;
     align-items: center;
     text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.spotify-btn:hover {
+    transform: translateY(-3px);
 }
 
 .small-icon {
@@ -174,6 +207,11 @@ nav {
     display: flex;
     align-items: center;
     text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.subscribe-btn:hover {
+    transform: translateY(-3px);
 }
 
 .about-section {
@@ -244,7 +282,9 @@ nav {
     grid-template-rows: repeat(3, 380px);
     gap: 30px;
     grid-template-rows: min-content min-content min-content;
+    
 }
+
  
 .icon-box {
     padding: 20px;
@@ -259,8 +299,10 @@ nav {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    text-align: left;      
+    text-align: left; 
+    transition: all 0.3s ease;     
 }
+
 
 .icon-box img {
     width: 40px;
@@ -341,6 +383,7 @@ nav {
     overflow: hidden;
     width: 380px;
     transition: 0.3s ease;
+    
 }
 
 .iframe-container {
@@ -395,8 +438,8 @@ nav {
 }
 
 .card:hover {
-    transform: translateY(-5px);
-}
+    transform: translateY(-3px);
+} 
 
 .host-section {
     padding: 80px 20px;
@@ -539,4 +582,57 @@ nav {
 }
 
 
+@media screen and (max-width: 576px) {
+    
+    .navbar {
+        padding: 16px 20px;
+    }
 
+
+    .hamburger {
+        display: block; /* মোবাইলে আইকন দেখা যাবে */
+        cursor: pointer;
+    }
+
+    .hamburger img {
+        width: 24px; 
+        filter: invert(1); /* আইকন সাদা করার জন্য */
+    }
+
+
+    .btn-subscribe {
+        display: none; 
+    }
+
+   
+    .nav-links {
+        display: none; 
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: #25143d; 
+        flex-direction: column; 
+        align-items: center;
+        padding: 20px 0;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        z-index: 100;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links li a {
+        display: block;
+        width: 100%;
+    }
+
+    /* #menu-toggle:checked ~ .nav-links {
+        display: flex; 
+    }
+} */
+}
